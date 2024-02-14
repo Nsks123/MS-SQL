@@ -1,24 +1,23 @@
-/*create table users(
-user_id int primary key,
-username varchar(20),
-email varchar(30),
-password varchar(20)
-);
-insert into users values(1,'sunil','sunil@gmail.com','sunil2002');
-insert into users values(2,'sunny','sunny@gmail.com','sunny2003');
-insert into users values(3,'arun','arun@gmail.com','arun2003');
-insert into users values(4,'dhanush','dhanush@gmail.com','dhanush2003');
-select * from users;
-select username from users
-where email='sunil@gmail.com'
-and password='sunil2002';
-select * from users
-where email='sunny@gmail.com'
-or password='sunil2002';
-select username from users
-where email='sunil@gmail.com'
-or password='123';
-select * from users
-where not email='sunil@gmail.com';
-select * from users
-where  email !='sunil@gmail.com';*/
+--Date & Time Functions
+--1.GETDATE(),current_timestamp,sysdatetime()
+--2.datename()
+--3.datediff()
+--4.dateadd()
+
+/*select getdate();
+select CURRENT_TIMESTAMP;  -- give millisecond
+select SYSDATETIME();
+
+
+select DATENAME(day,CURRENT_TIMESTAMP) as date;
+select DATENAME(month,CURRENT_TIMESTAMP) as month;
+select DATENAME(WEEKDAY,CURRENT_TIMESTAMP) as day ;
+select DATENAME(MINUTE,CURRENT_TIMESTAMP) as minute;
+select DATENAME(hour,CURRENT_TIMESTAMP) as hour;
+select DATENAME(year,CURRENT_TIMESTAMP) as year;
+
+select datediff(year,'september 12 2002','september 12 2023') as "ageindate";
+select datediff(year,'august 12 2002', CURRENT_TIMESTAMP) as age;
+
+select dateadd(year,10,current_timestamp);
+select dateadd(month,10,current_timestamp);*/
