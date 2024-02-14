@@ -1,62 +1,24 @@
-/*CREATE DATABASE SAMPLE2_DB;
-USE SAMPLE2_DB;
-CREATE DATABASE student;
-USE student;
-CREATE TABLE student(
-stuid INTEGER PRIMARY KEY,
-stuname VARCHAR(20) NOT NULL,
-stusalary DECIMAL(10,2) NOT NULL,
-job VARCHAR(20),
-phone INT UNIQUE,
-
+/*create table users(
+user_id int primary key,
+username varchar(20),
+email varchar(30),
+password varchar(20)
 );
-INSERT INTO student VALUES(09,'sunil kumar',25000,'Developer',7);
-INSERT INTO STUDENT(stuid,stuname,stusalary,job)
-VALUES(02,'Dhanush',20000,'Tester');
-SELECT * FROM student;
-SELECT stuid FROM student;
-
-UPDATE student SET job='Developer'
-WHERE stuname='Dhanush';
-UPDATE student SET stusalary=stusalary + 10000;
-UPDATE student SET phone=10,stuname='Sunny'
-WHERE stuid=09;
-insert into student values(03,'Arun',30000,'Tester',9);
-delete from student
-where stuid=03;
-select * from student
-order by stuid;
-select stuid from student
-order by stuname desc;
-select stuname from student
-order by stuid desc;
-select sum(stusalary) from student;
-select avg(stusalary) from student;
-select min(stusalary) from student;
-select max(stusalary) from student;
-select count(stusalary) from student;
-select abs(-11);
-select ceiling(76.14);
-select floor(76.14);
-select sign(10);
-select sign(-11);
-select square(5);
-select sqrt(81);
-select pi();
-select cos(45);
-select sin(30);
-select tan(45);
-select exp(2);
-select stuname,len(job) from student;
-select upper('this is sunil');
-select lower('THIS is Sunil');
-select ltrim('            sunny            ');
-select RTRIM('              sunny       ');
-select substring('microsoft',6,9);
-select replace('microsoft','micro','major');
-select REPLICATE('sunny',5);
-select REPLICATE('sunny ',5);*/
-
-
-
-
+insert into users values(1,'sunil','sunil@gmail.com','sunil2002');
+insert into users values(2,'sunny','sunny@gmail.com','sunny2003');
+insert into users values(3,'arun','arun@gmail.com','arun2003');
+insert into users values(4,'dhanush','dhanush@gmail.com','dhanush2003');
+select * from users;
+select username from users
+where email='sunil@gmail.com'
+and password='sunil2002';
+select * from users
+where email='sunny@gmail.com'
+or password='sunil2002';
+select username from users
+where email='sunil@gmail.com'
+or password='123';
+select * from users
+where not email='sunil@gmail.com';
+select * from users
+where  email !='sunil@gmail.com';*/
