@@ -1,23 +1,44 @@
---Date & Time Functions
---1.GETDATE(),current_timestamp,sysdatetime()
---2.datename()
---3.datediff()
---4.dateadd()
+--GROUP BY Function
+select job from student
+group by job;
 
-/*select getdate();
-select CURRENT_TIMESTAMP;  -- give millisecond
-select SYSDATETIME();
+select stuid,sum(stusalary) from student group by stuid;
+select stuid,round(avg(stusalary),2) from student group by stuid;
 
+--HAVING Clause
+select stuid ,sum(stusalary) from student
+group by stuid having stuid=2;
+select user_id from users
+group by user_id having user_id=1;
 
-select DATENAME(day,CURRENT_TIMESTAMP) as date;
-select DATENAME(month,CURRENT_TIMESTAMP) as month;
-select DATENAME(WEEKDAY,CURRENT_TIMESTAMP) as day ;
-select DATENAME(MINUTE,CURRENT_TIMESTAMP) as minute;
-select DATENAME(hour,CURRENT_TIMESTAMP) as hour;
-select DATENAME(year,CURRENT_TIMESTAMP) as year;
+--TOP() Clause
+ select top(2) user_id from users
+ order by user_id desc;
+select top(2) stusalary from student
+ order by stuid desc;
 
-select datediff(year,'september 12 2002','september 12 2023') as "ageindate";
-select datediff(year,'august 12 2002', CURRENT_TIMESTAMP) as age;
+ select * into emp_new1 from student
+ select * from emp_new1;
 
-select dateadd(year,10,current_timestamp);
-select dateadd(month,10,current_timestamp);*/
+ --AlTER
+ alter table student add stufather varchar(20) ;
+ --ALTER WITH CONSTRAINT
+ alter table student add stuproject varchar(155) not null default 1;
+--Alter with Reference
+--alter table student add projectid integer  null
+--constraint pID_unique_key unique;
+--Using Alter to add many coloums
+alter table student add projectid int, no_ofproject int null ;
+
+--DROP
+alter table student drop column projectid,no_ofproject;
+alter table student drop constraint pID_unique_key;
+
+alter table student alter column job integer;
+
+create table employee(emp_id int,emp_name varchar(100));
+alter table employee alter column emp_id varchar(20);
+insert into employee values('20','sunil');
+select * from employee as emp;
+select emp_id as e_id from employee ;
+select emp_id  e_id from employee ;*/
