@@ -1,31 +1,7 @@
---Joins
-create table products(productid int,productname varchar(50),categoryid int,price int);
-insert into products values(1,'chais',1,18);
-insert into products values(2,'chang',1,19);
-insert into products values(3,'syrup',2,10);
-select * from products;
-create table categories(categoryid int,categoryname varchar(50),description varchar(50));
-insert into categories values(1,'beverages','soft drinks');
-insert into  categories values(2,'condiments','sweet');
-insert into  categories values(3,'confections','desserts');
-select * from categories;
+--SUB QUERY
+select productid,productname from products
+where productname=(select productname from employee where productid=1);
 
-select productid,productname,price,description
-from products
-inner join 
-categories on products.categoryid=categories.categoryid;
-
-select productid,productname,price,description
-from products
-left join 
-categories on products.categoryid=categories.categoryid;
-
-select productid,productname,price,description
-from products
-right join 
-categories on products.categoryid=categories.categoryid;
-
-select productid,productname,price,description
-from products
-full join 
-categories on products.categoryid=categories.categoryid;
+select prodtctname,categoryid from products
+where categoryid>(select categoryid from products where categoryid=1) and
+productname=(select productname from products where productname='chais');
