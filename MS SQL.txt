@@ -1,7 +1,27 @@
---SUB QUERY
-select productid,productname from products
-where productname=(select productname from employee where productid=1);
+--Transact sql
+declare @name varchar(50);
+set @name='sunil kumar';
+select @name as name;
 
-select prodtctname,categoryid from products
-where categoryid>(select categoryid from products where categoryid=1) and
-productname=(select productname from products where productname='chais');
+declare @number int;
+select @number=10, @name='dhanush';
+select @number as number,@name as name;
+
+set @number +=50;
+set @number +=30
+select @name='sunil' , @name='dhanush';
+select @number,@name;
+
+set @number -=10;
+select @number;
+
+set @number *=10;
+select @number;
+use student;
+declare @name varchar(50), @salary decimal(7,2);
+select @name=stuname,@salary=stusalary from student ;
+select @name as Name, @salary as Salary;
+
+select * from student;
+
+ 
