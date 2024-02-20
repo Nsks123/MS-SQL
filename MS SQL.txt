@@ -1,18 +1,14 @@
---Begin End
-begin
-declare @name varchar(50),@salary integer,@deptid int=10
-select @name=stuname,@salary=stusalary from student
-where stuid=@deptid
-select @name 'name',@salary 'salary'
-end
-
-begin
-declare @name varchar(50),@salary integer,@deptid int=9
-select @name=stuname,@salary=stusalary from student
-where stuid=@deptid
-select @name 'name',@salary 'salary'
+--If Else for control flow in  ms-sql
 begin 
-print  + @deptid
+declare @salary integer;
+select @salary=avg(stusalary)from student
+select @salary as avgsalary
+if @salary >25000
+begin
+print 'avgsalary is greater than 25000';
+end
+else
+begin
+print 'AVGSALARY IS LESS THAN 25000';
 end
 end
-go
