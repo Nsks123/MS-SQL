@@ -1,12 +1,16 @@
---while 
-begin
-while(select min(stusalary)from student)>10000
-begin
-update student set stusalary=stusalary+20000;
-print 'salary updated';
-if(select min(stusalary)from student)>=10000
-print 'min.salary is greater or equal to 80000';
-break;
-end
-end
-go
+--Exceptional Handling
+begin try
+select 10/5 as division
+end try
+begin catch
+select ERROR_MESSAGE()
+as errormessage
+end catch
+
+
+begin try
+select 10/0 as division
+end try
+begin catch
+select ERROR_MESSAGE() as errormessage,ERROR_NUMBER() as errornumber, ERROR_LINE() as errorline,ERROR_PROCEDURE() as errorprocedure ,ERROR_STATE() as errorstate,ERROR_SEVERITY() as errorseverity
+end catch
