@@ -1,14 +1,12 @@
---If Else for control flow in  ms-sql
-begin 
-declare @salary integer;
-select @salary=avg(stusalary)from student
-select @salary as avgsalary
-if @salary >25000
+--while 
 begin
-print 'avgsalary is greater than 25000';
-end
-else
+while(select min(stusalary)from student)>10000
 begin
-print 'AVGSALARY IS LESS THAN 25000';
+update student set stusalary=stusalary+20000;
+print 'salary updated';
+if(select min(stusalary)from student)>=10000
+print 'min.salary is greater or equal to 80000';
+break;
 end
 end
+go
