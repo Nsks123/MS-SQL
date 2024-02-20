@@ -1,12 +1,18 @@
---GO COMMAND
-declare @name varchar(50)
-select @name='sunil'
-go
-declare @name varchar(50)
-select @name='sunil'
-go
+--Begin End
+begin
+declare @name varchar(50),@salary integer,@deptid int=10
+select @name=stuname,@salary=stusalary from student
+where stuid=@deptid
+select @name 'name',@salary 'salary'
+end
 
-declare @name varchar(50)
-select @name='sunil'
-select @name as name
+begin
+declare @name varchar(50),@salary integer,@deptid int=9
+select @name=stuname,@salary=stusalary from student
+where stuid=@deptid
+select @name 'name',@salary 'salary'
+begin 
+print  + @deptid
+end
+end
 go
